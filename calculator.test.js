@@ -1,4 +1,4 @@
-var app = require("./Add.js");
+var app = require("./calculator.js");
 describe("Addition",function(){
 	it("The function should add 2 numbers",function() {
 		var value=app.AddNumber(5,6);
