@@ -1,4 +1,4 @@
 const assert = require('assert');
-const hello = require('./hello.js');
+const greetings = require('./hello.js');
 
-assert.strictEqual(hello(), 'Hello World!', 'our "Hello World" function works');
+assert.strictEqual(greetings.sayHelloInEnglish(), 'HELLO', 'our "Hello" function works');
