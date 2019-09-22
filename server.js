@@ -6,7 +6,8 @@ const index = fs.readFileSync(__dirname + '/index.html', 'utf8');
 const favicon = fs.readFileSync(__dirname + '/favicon.ico');
 // display the Git revision hash in browser so we know which version of app.
 const get_hash = require('./git_hash.js');
-const hello = require('./hello.js'); // the most basic "function" ever!
+//const hello = require('./hello.js'); // the most basic "function" ever!
+const calculator = require('./calculator.js');
 
 get_hash(function(e, GIT_COMMIT_HASH, stder) {
   !e ? console.log('GIT_COMMIT_HASH:', GIT_COMMIT_HASH) : console.log(e);
