@@ -5,19 +5,19 @@
 version: 2
 jobs:
   build:
-    #environment:
-       #SERVER_IP_ADDRESS: 138.68.163.126
-       #DOKKU_APP: circlecidemo
-       #TRAVIS: "false"
+    environment:
+       SERVER_IP_ADDRESS: 138.68.163.126
+       DOKKU_APP: circlecidemo
+       TRAVIS: "false"
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
       # the Docker image with Cypress dependencies
-      #- image: cypress/base:8
+      - image: cypress/base:8
 
-        #environment:
+        environment:
           ## this enables colors in the output
-          #TERM: xterm
+          TERM: xterm
 
     working_directory: ~/repo
 
@@ -41,10 +41,8 @@ jobs:
       # run tests!
       - run: yarn test
 
-      # Use BASH instead of DASH! see: https://ubuntuforums.org/showthread.php?t=1932504
-      # - run: apt-get install -y sudo # https://discuss.circleci.com/t/sudo-command-not-found/14208/4
-      #- run: ls -al /bin/sh && sudo rm /bin/sh && sudo ln -s /bin/bash /bin/sh && ls -al /bin/sh
-      #- run: echo ${SERVER_IP_ADDRESS}
-      #- run: echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+      - run: ls -al /bin/sh && sudo rm /bin/sh && sudo ln -s /bin/bash /bin/sh && ls -al /bin/sh
+      - run: echo ${SERVER_IP_ADDRESS}
+      - run: echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
       # DEPLOY "Staging" App:
-      #- run: sh bin/deploy.sh
+      - run: sh bin/deploy.sh
