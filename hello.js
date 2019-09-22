@@ -8,5 +8,8 @@ module.exports = {
 
 	sayHelloInSpanish: function() {
 		return "Hola";
+	},
+	sayHelloInFrench: function(){
+		return "Bonjour"
 	}
 };
